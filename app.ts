@@ -36,21 +36,24 @@ const main = async () => {
     for (let index = 0; index < lines.length; index++) {
       const line = lines[index];
 
-      const prompt = `Write a long, very detailed, highly SEO optimized article on '${line}'. The writing must be very engaging, and informative. Cover all factors. Write 5000 words minimum. Wrap the headings HTML strong tags and list itmes in strongs tags.`;
+      const prompt = `Write a long, very detailed, highly SEO optimized article on '${line}'. The writing must be very engaging, and informative. Cover all factors. Write 3000 words minimum. Wrap the headings with H1, H2 and H3 html tags and list items with ul or li elements. Make sure no paragraphs are longer than 3-4 sentences.`;
 
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt,
         temperature: 1,
-        max_tokens: 4000,
+        max_tokens: 4096,
       });
 
       const data = response.data.choices[0].text;
       const fileName = line.replace(/[^a-zA-Z ]/g, "");
 
       if (data) {
+        fs.writeFileSync(`output/${fileName}NOEDITS.html`, data)
+        const dataWithBreaks = data.replace(/(\r\n|\n|\r)/gm, "<br />");
+        fs.writeFileSync(`output/${fileName}WITHBREAKS.html`, dataWithBreaks);
         const saveData = data.replace(/(\r\n|\n|\r)/gm, "");
-        fs.writeFileSync(`output/${fileName}.html`, saveData);
+        fs.writeFileSync(`output/${fileName}FORMATTED.html`, saveData);
       }
     }
   });
