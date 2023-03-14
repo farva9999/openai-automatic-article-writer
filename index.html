@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AI Blog Post Writer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1>AI Blog Post Writer</h1>
+
+    <div class="container">
+
+        <div class="globalsettings" id="global-area">
+            <h2>Global Style Settings</h2>
+            <div class="parameters">
+                <div class="baseprompt">
+                    <!-- Base Prompt -->
+                    <p>Base Prompt</p>
+                    <textarea
+                        id="base-prompt">The writing must be very engaging, and informative. Cover all aspects of the topic. Wrap the headings with H1, H2 and H3 html tags and list items with ul or li elements. Make sure no paragraphs are longer than 3-4 sentences.</textarea>
+                </div>
+                <div class="dropdown">
+                    <p>Tone</p>
+                    <select name="Tone" id="tone-select">
+                        <option value="friendly">Friendly</option>
+                        <option value="funny">Funny</option>
+                        <option value="professor">Professor</option>
+                    </select>
+                </div>
+                <div class="lengthparameter">
+                    <!-- Length Parameter -->
+                    <p>Max Article Length</p>
+                    <input type="range" id="length-slider" min="500" max="3000" value="500" step="100" />
+                    <p id="length-value">500</p>
+
+                </div>
+            </div>
+            <div id="introduction-area">
+                <!-- Prompt Text Box -->
+                <h2>Prompt Entry</h2>
+                <p>What is the topic of the article?</p>
+                <textarea id="topic-input"></textarea>
+
+                <!-- Parameters -->
+
+                <!-- Prompt Preview -->
+                <div class="promptpreview">
+                    <h3>Prompt Preview:</h3>
+                    <div id="prompt-preview">
+                        <p id="promptpreviewtext"></p>
+                    </div>
+                </div>
+                <p id="estimatedcost">Estimated Cost: $</p>
+                <button id="generate-button">Send to OpenAI to generate</button>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+</body>
+
+<script src="index.js"></script>
+
+</html>

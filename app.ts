@@ -40,9 +40,10 @@ const main = async () => {
 
       const response = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt,
+        prompt: prompt,
         temperature: 1,
-        max_tokens: 4096,
+        max_tokens: 500,
+        
       });
 
       const data = response.data.choices[0].text;

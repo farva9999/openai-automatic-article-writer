@@ -1,0 +1,97 @@
+*{
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+#introduction-area, #body-area, #conclusion-area, #global-area {
+
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+h2{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+}
+#introduction-area {
+    background-color: #e8ff9b;
+}
+
+.container {
+    display: block;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 20px;
+}
+
+.baseprompt{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+}
+#base-prompt {
+    height: 80%;
+    width: 90%;
+    
+}
+
+#topic-input{
+    width: 50%;
+    height: 100%;
+    border: 1px solid black;
+
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.parameters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    background-color: #64ff79;
+    border-radius: 10px;
+}
+
+.parameters>* {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.dropdown>* {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+button {
+    background-color: #4891ff;
+    border: 1px solid #4891ff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+}
+
+#estimatedcost {
+    width: 20%;
+    background-color: #ff9b9b;
+    border: 1px solid #ff9b9b;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+
+}
